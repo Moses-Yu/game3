@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject[] menuObjects;
     private int index = 0;
+    private bool usingMouse = false;
 
     // Start is called before the first frame update
     void Start() { }
@@ -15,22 +16,37 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        for (int i = 0; i < menuObjects.Length; i++)
         {
-            if (index > 0)
-            {
-                index--;
+            if(menuObjects[i].GetComponent<MenuItem>().mouseOver){
+                usingMouse = true;
+                index = i;
+                break;
             }
+
+            usingMouse = false;
+            break;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (index < menuObjects.Length)
+        
+        if(!usingMouse){
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                index++;
+                if (index > 0)
+                {
+                    index--;
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space)){
-            SceneManager.LoadScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (index < menuObjects.Length - 1)
+                {
+                    index++;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
+            }
         }
 
         for (int i = 0; i < menuObjects.Length; i++)
@@ -44,7 +60,5 @@ public class Menu : MonoBehaviour
                 menuObjects[i].GetComponent<MenuItem>().selected = false;
             }
         }
-
-
     }
 }

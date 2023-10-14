@@ -6,6 +6,7 @@ using TMPro;
 public class MenuItem : MonoBehaviour
 {
     public bool selected = false;
+    public bool mouseOver = false;
     public string sceneTo;
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,16 @@ public class MenuItem : MonoBehaviour
         else{
             gameObject.GetComponent<TextMeshProUGUI>().fontSize = 68.2f;
         }
+    }
+
+    private void OnMouseOver()
+    {
+        mouseOver = true;
+    }
+    private void OnMouseExit() {
+        mouseOver = false;
+    }
+    private void OnMouseDown() {
+        
     }
 }
