@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class GoBack : MonoBehaviour
 {
-    public GameObject[] menuObjects;
-    private int index = 0;
+    public string sceneTo;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +15,8 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("horizontal") > 0){
-
+        if(Input.GetKey(KeyCode.Escape)){
+            SceneManager.LoadScene(sceneTo);
         }
-
-        
     }
-
-    
 }
