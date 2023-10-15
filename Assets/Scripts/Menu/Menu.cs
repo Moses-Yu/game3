@@ -16,19 +16,23 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        usingMouse = false;
         for (int i = 0; i < menuObjects.Length; i++)
         {
-            if(menuObjects[i].GetComponent<MenuItem>().mouseOver){
+            if (menuObjects[i].GetComponent<MenuItem>().mouseOver)
+            {
                 usingMouse = true;
                 index = i;
                 break;
             }
-
-            usingMouse = false;
-            break;
         }
-        
-        if(!usingMouse){
+
+        if (usingMouse && Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
+        }
+        else
+        {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (index > 0)

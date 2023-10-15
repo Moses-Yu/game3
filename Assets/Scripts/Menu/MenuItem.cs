@@ -25,14 +25,11 @@ public class MenuItem : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
+    void OnMouseEnter()
     {
         mouseOver = true;
     }
-    private void OnMouseExit() {
+    void OnMouseExit() {
         mouseOver = false;
-    }
-    private void OnMouseDown() {
-        
     }
 }
