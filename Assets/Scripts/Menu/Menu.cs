@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
-
+using MyMethods;
 public class Menu : MonoBehaviour
 {
     public GameObject[] menuObjects;
     private int index = 0;
     private bool usingMouse = false;
+    SceneController sceneController;
 
     // Start is called before the first frame update
-    void Start() { }
+    void Start() {
+        sceneController = new SceneController();
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,7 +30,7 @@ public class Menu : MonoBehaviour
 
         if (usingMouse && Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
+            sceneController.ChangeScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
         }
         else
         {
@@ -49,7 +50,7 @@ public class Menu : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
+                sceneController.ChangeScene(menuObjects[index].GetComponent<MenuItem>().sceneTo);
             }
         }
 
@@ -65,4 +66,5 @@ public class Menu : MonoBehaviour
             }
         }
     }
+
 }
