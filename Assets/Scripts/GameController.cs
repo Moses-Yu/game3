@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public int noteSpeed = 5;
+    public bool paused = false;
     // Start is called before the first frame update
     void Start()
     {
