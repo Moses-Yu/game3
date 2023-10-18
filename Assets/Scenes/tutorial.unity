@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88279eb87a4ad9d44b9af394562e71ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSpeed: 8
+  noteSpeed: 1
   paused: 0
 --- !u!1 &1717453299
 GameObject:
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 8965867724494639617, guid: 2f5a0c38438b03943b723c8804a4fe55, type: 3}
+  game: {fileID: 1255994323}
 --- !u!1001 &8634050925741611551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5215982186599964000, guid: 2f5a0c38438b03943b723c8804a4fe55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.84
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 5215982186599964000, guid: 2f5a0c38438b03943b723c8804a4fe55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1125,6 +1126,10 @@ PrefabInstance:
     - target: {fileID: 8965867724494639617, guid: 2f5a0c38438b03943b723c8804a4fe55, type: 3}
       propertyPath: m_Name
       value: note
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965867724494639617, guid: 2f5a0c38438b03943b723c8804a4fe55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
