@@ -27,7 +27,7 @@ public class HitLine : MonoBehaviour
             string text;
             if (margin > 0)
             {
-                text = "" + margin;
+                text = "+" + margin;
                 moe.color = Color.red;
             }
             else if (margin < 0)
