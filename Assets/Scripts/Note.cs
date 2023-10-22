@@ -22,7 +22,7 @@ public class Note : MonoBehaviour
 
         if (!passhitline) {
             if(transform.localPosition.y < -10f){
-                print("passhitline " + (transform.localPosition.y + 10));
+                // print("passhitline " + (transform.localPosition.y + 10));
                 passhitline = true;
             }
         }
@@ -32,4 +32,5 @@ public class Note : MonoBehaviour
             Destroy(gameObject);
         }
     }   
+
 }
