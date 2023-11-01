@@ -22,7 +22,8 @@ public class HitLine : MonoBehaviour
         if (notes.Count > 0 && Input.anyKeyDown)
         {
             note = notes.Peek();
-            double margin = Math.Round((note.transform.localPosition.y + 10f)/noteSpeed, 3);
+            print(""+ (note.transform.localPosition.y + 10f));
+            double margin = Math.Round((note.transform.localPosition.y + 10f)/noteSpeed/0.001f, 8);
             Destroy(note);
             string text;
             if (margin > 0)
